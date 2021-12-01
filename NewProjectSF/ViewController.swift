@@ -50,7 +50,11 @@ class ViewController: UIViewController {
 
     
     @IBAction func invertInputNum(_ sender: UIButton) {
-        currentInput = -currentInput
+        let val = -currentInput
+        expressionAndResultLabel?.text = val.truncatingRemainder(dividingBy: 1) == 0
+        ? String(Int(val))
+        : String(-currentInput)
+        
     }
     
     @IBAction func removeLastCharacter(_ sender: UIButton) {
